@@ -134,4 +134,25 @@ Pandas has two basic data structures:
 | **Model Evaluation**    | `from sklearn.metrics import mean_squared_error`       | Import the mean squared error metric                        |
 |                         | `mean_squared_error(y_test, predictions)`              | Calculate the mean squared error of the model predictions   |
 
+## Seaborn - Key Functions and Examples
+
+| Category               | Function or Example                                        | Description                                                          |
+| ---------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Distribution Plots** | `sns.distplot(data)`                                       | Plot a univariate distribution of observations.                      |
+|                        | `sns.kdeplot(data, shade=True)`                            | Plot a kernel density estimate.                                      |
+|                        | `sns.histplot(data, kde=True)`                             | Plot histogram with optional kernel density estimate.                |
+| **Categorical Plots**  | `sns.boxplot(x='x_col', y='y_col', data=df)`               | Draw a box plot to show distributions with respect to categories.    |
+|                        | `sns.violinplot(x='x_col', y='y_col', data=df)`            | Draw a combination of boxplot and kernel density estimate.           |
+|                        | `sns.barplot(x='x_col', y='y_col', data=df)`               | Show point estimates and confidence intervals as rectangular bars.   |
+| **Scatter Plots**      | `sns.scatterplot(x='x_col', y='y_col', data=df)`           | Plot data and a linear regression model fit.                         |
+|                        | `sns.pairplot(data=df)`                                    | Plot pairwise relationships in a dataset.                            |
+| **Heatmaps**           | `sns.heatmap(data=matrix, annot=True)`                     | Plot rectangular data as a color-encoded matrix.                     |
+| **Regression Plots**   | `sns.regplot(x='x_col', y='y_col', data=df)`               | Plot data and a linear regression model fit.                         |
+|                        | `sns.lmplot(x='x_col', y='y_col', data=df)`                | Plot data and regression model fits across a FacetGrid.              |
+| **Time Series Plots**  | `sns.lineplot(x='time', y='value', data=df)`               | Draw a line plot with possibility for several semantic groupings.    |
+| **Facet Grid**         | `sns.FacetGrid(df, col='col_name', row='row_name')`        | Multi-plot grid for plotting conditional relationships.              |
+|                        | `g.map(sns.histplot, 'column_name')`                       | Apply a plotting function to each facet’s subset of the data.        |
+| **Cluster Map**        | `sns.clustermap(data=matrix)`                              | Organize and plot a heatmap with hierarchical clustering.            |
+| **Joint Plot**         | `sns.jointplot(x='x_col', y='y_col', data=df, kind='hex')` | Plot a bivariate histogram and scatterplot with marginal histograms. |
+
 
