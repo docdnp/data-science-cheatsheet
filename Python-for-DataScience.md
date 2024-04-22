@@ -2,6 +2,8 @@
 
 ## Numpy - Key Functions and Examples
 
+### Numpy - Basics
+
 | Category                     | Function or Example                    | Description                           |
 | ---------------------------- | -------------------------------------- | ------------------------------------- |
 | **Creating Arrays**          | `np.array([1, 2, 3])`                  | Create a vector                       |
@@ -23,6 +25,20 @@
 |                              | `arr.max()`                            | Maximum                               |
 | **Statistical Computations** | `np.median(arr)`                       | Median                                |
 |                              | `np.std(arr)`                          | Standard deviation                    |
+
+### Numpy - Key Functions for `np.random`
+
+| Category                     | Function or Example                          | Description                                                                                               |
+| ---------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Normal Distribution**      | `np.random.normal(loc=0, scale=1, size=100)` | Draw random samples from a normal (Gaussian) distribution with mean `loc` and standard deviation `scale`. |
+| **Uniform Distribution**     | `np.random.uniform(low=0, high=1, size=100)` | Draw random samples from a uniform distribution over the half-open interval `[low, high)`.                |
+| **Binomial Distribution**    | `np.random.binomial(n=10, p=0.5, size=100)`  | Draw random samples from a binomial distribution with number of trials `n` and success probability `p`.   |
+| **Poisson Distribution**     | `np.random.poisson(lam=1.0, size=100)`       | Draw random samples from a Poisson distribution with expected number of occurrences `lam`.                |
+| **Exponential Distribution** | `np.random.exponential(scale=1.0, size=100)` | Draw random samples from an exponential distribution with scale parameter `scale`.                        |
+| **Integers**                 | `np.random.randint(low=0, high=10, size=5)`  | Draw random integers from the “discrete uniform” distribution in the interval `[low, high)`.              |
+| **Random Sampling**          | `np.random.choice(['a', 'b', 'c'], size=10)` | Generate a random sample from a given 1-D array or list.                                                  |
+| **Shuffle and Permutations** | `np.random.shuffle(x)`                       | Modify a sequence in-place by shuffling its contents.                                                     |
+|                              | `np.random.permutation(x)`                   | Randomly permute a sequence, or return a permuted range.                                                  |
 
 ## Pandas - Key Functions and Examples
 
