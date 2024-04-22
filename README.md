@@ -12,6 +12,7 @@ I am currently doing a data science course. That's why I'm creating a series of 
     * Datframes
     * Series
   * sklearn
+  * statsmodels.api
 
 ## How to create an HTML or PDF file
 

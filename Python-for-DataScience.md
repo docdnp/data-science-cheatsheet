@@ -39,7 +39,9 @@
 | **Random Sampling**          | `np.random.choice(['a', 'b', 'c'], size=10)` | Generate a random sample from a given 1-D array or list.                                                  |
 | **Shuffle and Permutations** | `np.random.shuffle(x)`                       | Modify a sequence in-place by shuffling its contents.                                                     |
 |                              | `np.random.permutation(x)`                   | Randomly permute a sequence, or return a permuted range.                                                  |
+| **Random State Control**     | `np.random.seed(seed=42)`                    | Set the seed of the random number generator for numpy to ensure reproducibility of random operations.     |
 
+Dieser Eintrag stellt sicher, dass die Tabelle die Funktion zur Kontrolle des Zufallszustandes umfasst, was besonders wichtig ist, um reproduzierbare Ergebnisse bei der Verwendung von Zufallsfunktionen zu gewährleisten.
 ## Pandas - Key Functions and Examples
 
 Pandas has two basic data structures:
@@ -171,4 +173,24 @@ Pandas has two basic data structures:
 | **Cluster Map**        | `sns.clustermap(data=matrix)`                              | Organize and plot a heatmap with hierarchical clustering.            |
 | **Joint Plot**         | `sns.jointplot(x='x_col', y='y_col', data=df, kind='hex')` | Plot a bivariate histogram and scatterplot with marginal histograms. |
 
+Hier ist eine Tabelle, die eine Auswahl nützlicher Funktionen der Bibliothek `statsmodels.api` umfasst, geeignet für statistische Modellierung und Analyse. Diese Tabelle kategorisiert die Funktionen nach ihrem Hauptanwendungsbereich.
 
+### Statsmodels - Key Functions and Examples
+
+| Category                  | Function or Example                                  | Description                                                                                                          |
+| ------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Regression Models**     | `sm.OLS(y, X).fit()`                                 | Fit an Ordinary Least Squares (OLS) linear regression model.                                                         |
+|                           | `sm.GLS(y, X).fit()`                                 | Fit a Generalized Least Squares (GLS) model.                                                                         |
+| **Time Series Analysis**  | `sm.tsa.ARIMA(data, order=(1,1,1)).fit()`            | Fit an ARIMA model to time series data.                                                                              |
+|                           | `sm.tsa.seasonal_decompose(x, model='additive')`     | Decompose a time series into its seasonal, trend, and residual components.                                           |
+| **Statistical Tests**     | `sm.stats.ttest_ind(x1, x2)`                         | Calculate the T-test for the means of two independent samples of scores.                                             |
+|                           | `sm.stats.ztest(x1, x2=None, value=0)`               | Perform a Z-test of the null hypothesis of the mean for one or two samples.                                          |
+| **Diagnostic Plots**      | `sm.qqplot(data, line='s')`                          | Generate a Q-Q plot to compare the quantiles of a dataset to a theoretical distribution.                             |
+|                           | `sm.qqplot(data, line='s', fit=True)`                | Generate a Q-Q plot with a line fitted to the quantiles to compare the dataset to a theoretical normal distribution. |
+| **Nonparametric Methods** | `sm.nonparametric.KDEUnivariate(data).fit()`         | Fit a kernel density estimate for univariate data.                                                                   |
+| **Discrete Models**       | `sm.Logit(y, X).fit()`                               | Fit a logistic regression model.                                                                                     |
+|                           | `sm.Poisson(y, X).fit()`                             | Fit a Poisson regression model to count data.                                                                        |
+| **Robust Linear Models**  | `sm.RLM(y, X, M=sm.robust.norms.HuberT()).fit()`     | Fit a robust linear model using Huber's T norm.                                                                      |
+| **Factor Analysis**       | `sm.factor_analysis.Factor(endog, n_factor=2).fit()` | Perform factor analysis on multivariate data.                                                                        |
+| **Survival Analysis**     | `sm.duration.SurvfuncRight(time, status).fit()`      | Estimate survival functions using Kaplan-Meier estimator for right-censored data.                                    |
+| **Categorical Data**      | `sm.MNLogit(y, X).fit()`                             | Fit a multinomial logistic regression model for unordered categorical outcomes.                                      |
