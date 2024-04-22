@@ -26,6 +26,11 @@
 
 ## Pandas - Key Functions and Examples
 
+Pandas has two basic data structures:
+
+- **DataFrame**: A DataFrame is a two-dimensional, size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). It is essentially a table where each column is a Series.
+- **Series**: A Series is a one-dimensional array-like object containing a sequence of values and associated array of data labels, called its index. It represents a single column in a DataFrame.
+
 ### Pandas - Dataframes
 
 | Category                 | Function or Example                                                  | Description                                                                                                                     |
