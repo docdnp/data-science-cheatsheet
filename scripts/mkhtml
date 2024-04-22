@@ -1,5 +1,22 @@
 #!/bin/bash
 
+opt=$1
+
+usage () {
+    cat <<EOF
+usage: $0 [-h|--help|-t|--toc]"
+    -h, --help  print this message
+    -t, --toc   create table of contents
+EOF
+}
+
+[ "$opt" == "-h" ] || [ "$opt" == "--help" ] && { usage; exit 0; }
+
+[ -n "$opt" ] && {
+    [ "$opt" != "-t"     ] && [ "$opt" != "--toc"  ] && { echo "error: unknown option: $1"; usage; exit 1; }
+    opt=-toc
+}
+
 cmd-found () { command -v "$1" >&/dev/null ; }
 
 cmd-found mdtohtml || { echo "error: mdtohtml not found: install mdtohtml"; exit 1; }
@@ -8,5 +25,5 @@ cmd-found mdtohtml || { echo "error: mdtohtml not found: install mdtohtml"; exit
     echo "error: source file Python-for-DataScience.md not found"; exit 1 
 }
 
-mdtohtml Python-for-DataScience.md Python-for-DataScience.html \
-    && patch Python-for-DataScience.html scripts/cssstyle.diff
+mdtohtml $opt Python-for-DataScience.md Python-for-DataScience.html \
+    && patch Python-for-DataScience.html scripts/cssstyle.diff >&/dev/null

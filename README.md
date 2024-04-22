@@ -31,6 +31,9 @@ To create an HTML version of the markdown file:
 
 ```
 scripts/mkhtml
+
+# or if you like to have table of contents
+scripts/mkhtml --toc
 ```
 
 To create a PDF version of the markdown file:
