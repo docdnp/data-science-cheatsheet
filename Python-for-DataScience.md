@@ -54,8 +54,11 @@
 |                          | `df1.merge(right=df2, on='key', how='<how>')`                        | Alternative: Merge two dataframes on a key column                                                                               |
 | **Statistical Analysis** | `df.describe()`                                                      | Generate descriptive statistics                                                                                                 |
 |                          | `df.mode()`                                                          | Calculate the mode(s) for each column in the DataFrame, which represents the most frequently occurring value(s) in each column. |
-|                          | `df['column'].mean()`                                                | Calculate the mean of a column                                                                                                  |
 |                          | `df['column'].mode()`                                                | Calculate the mode of a column                                                                                                  |
+|                          | `df['column'].min()`                                                 | Calculate the minimum value of a column.                                                                                        |
+|                          | `df['column'].max()`                                                 | Calculate the maximum value of a column.                                                                                        |
+|                          | `df['column'].mean()`                                                | Calculate the mean of a column                                                                                                  |
+|                          | `df['column'].quantile(q)`                                           | Calculate the quantile of a column, where `q` is a float representing the quantile threshold.                                   |
 |                          | `pd.crosstab(index=df['col1'], columns=df['col2'])`                  | Create a cross-tabulation to show the frequency with which certain groups of data appear.                                       |
 |                          | `pd.crosstab(col1, col2, rownames=['True'], colnames=['Predicted'])` | Create a cross-tabulation with custom row and column names to compare true conditions versus predicted results.                 |
 | **Data Export**          | `df.to_csv('file.csv')`                                              | Export dataframe to a CSV file                                                                                                  |
@@ -66,6 +69,12 @@
 |                          | `df.dtypes`                                                          | Get the data types of each column.                                                                                              |
 |                          | `df.select_dtypes(include=[types])`                                  | Select columns in a DataFrame based on their data type. Specify types to include using a list like `['number', 'category']`.    |
 |                          | `df.select_dtypes(exclude=[types])`                                  | Exclude columns in a DataFrame based on their data type.                                                                        |
+
+
+Hier sind die hinzugefügten Einträge für `quantile`, `min`, `max`, und `mean` für deine pandas Cheat-Sheet Tabelle:
+
+| Category | Function or Example | Description |
+| -------- | ------------------- | ----------- |
 
 ## Sklearn - Key Functions and Examples
 
