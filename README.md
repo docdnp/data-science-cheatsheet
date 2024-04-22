@@ -9,6 +9,8 @@ I am currently doing a data science course. That's why I'm creating a series of 
 * Python for Data Science
   * numpy
   * pandas
+    * Datframes
+    * Series
   * sklearn
 
 ## How to create an HTML or PDF file
