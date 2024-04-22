@@ -26,6 +26,8 @@
 
 ## Pandas - Key Functions and Examples
 
+### Pandas - Dataframes
+
 | Category                 | Function or Example                                                  | Description                                                                                                                     |
 | ------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Loading Data**         | `pd.read_csv('file.csv')`                                            | Load data from a CSV file                                                                                                       |
@@ -71,10 +73,21 @@
 |                          | `df.select_dtypes(exclude=[types])`                                  | Exclude columns in a DataFrame based on their data type.                                                                        |
 
 
-Hier sind die hinzugefügten Einträge für `quantile`, `min`, `max`, und `mean` für deine pandas Cheat-Sheet Tabelle:
+### Pandas - Series
 
-| Category | Function or Example | Description |
-| -------- | ------------------- | ----------- |
+| Category                | Function or Example                     | Description                                                                                              |
+| ----------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Series Attributes**   | `series.values`                         | Returns the data of the Series as an array.                                                              |
+|                         | `series.index`                          | Returns the index (labels) of the Series.                                                                |
+|                         | `series.dtype`                          | Returns the data type of the Series.                                                                     |
+| **Series Manipulation** | `series.sort_values()`                  | Sorts the Series in ascending or descending order.                                                       |
+|                         | `series.drop_duplicates()`              | Returns a Series with duplicate values removed.                                                          |
+|                         | `series.reset_index(drop=True)`         | Resets the index of the Series, making it a simple range index, and optionally drops the previous index. |
+| **Series Analysis**     | `series.describe()`                     | Provides a summary of statistics pertaining to the Series data.                                          |
+|                         | `series.mean()`                         | Computes the mean of the Series.                                                                         |
+|                         | `series.median()`                       | Computes the median of the Series.                                                                       |
+|                         | `series.mode()`                         | Computes the mode of the Series.                                                                         |
+|                         | `series.quantile([0.25, 0.5, 0.75, 1])` | Computes quantiles for the Series data.                                                                  |
 
 ## Sklearn - Key Functions and Examples
 
