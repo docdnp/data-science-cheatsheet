@@ -5,16 +5,16 @@
 72d71
 <   line-height: 1.5;
 73a73,74
->   max-width: 80%;
->   margin-left: 10%;
+>   max-width: 50%;
+>   margin-left: 25%;
 178a180,189
 >   width: 100%;
 >   overflow: auto;
 > }
 > 
 > body th:first-child, td:first-child {
->     width: 20%; /* Erste Spalte */
+>     width: 20%;
 > }
 > body  th:nth-child(2), td:nth-child(2),
 > body th:nth-child(3), td:nth-child(3) {
->     width: 40%; /* Zweite und dritte Spalte */
+>     width: 40%;

@@ -5,4 +5,9 @@ cmd-found () { command -v "$1" >&/dev/null ; }
 cmd-found wkhtmltopdf || { echo "error: wkhtmltopdf not found: install wkhtmltopdf"; exit 1; }
 
 scripts/mkhtml \
-    && wkhtmltopdf Python-for-DataScience.html Python-for-DataScience.pdf
+    && sed -re 's/max-width: 50%/max-width: 100%/' \
+            -e 's/margin-left: 25%;//' \
+            Python-for-DataScience.html > Python-for-DataScience.pdf.html \
+    && wkhtmltopdf Python-for-DataScience.pdf.html Python-for-DataScience.pdf \
+    && rm Python-for-DataScience.pdf.html
+
