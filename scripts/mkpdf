@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cmd-found () { command -v "$1" >&/dev/null ; }
+
+cmd-found wkhtmltopdf || { echo "error: wkhtmltopdf not found: install wkhtmltopdf"; exit 1; }
+
+scripts/mkhtml \
+    && wkhtmltopdf Python-for-DataScience.html Python-for-DataScience.pdf

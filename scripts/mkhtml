@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cmd-found () { command -v "$1" >&/dev/null ; }
+
+cmd-found mdtohtml || { echo "error: mdtohtml not found: install mdtohtml"; exit 1; }
+
+[ -f Python-for-DataScience.md ] || { 
+    echo "error: source file Python-for-DataScience.md not found"; exit 1 
+}
+
+mdtohtml Python-for-DataScience.md Python-for-DataScience.html \
+    && patch Python-for-DataScience.html scripts/cssstyle.diff
