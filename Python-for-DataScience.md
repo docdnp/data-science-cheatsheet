@@ -36,6 +36,7 @@
 |                          | `df[['col1', 'col2']]`                                               | Select multiple columns                                                                                                         |
 |                          | `df.iloc[0]`                                                         | Select a row by integer location                                                                                                |
 |                          | `df.loc[conditions]`                                                 | Select rows based on label or a boolean array.                                                                                  |
+|                          | `df['column'].unique()`                                              | Return unique values of a column in the form of an array.                                                                       |
 | **Filtering Data**       | `df[df['column'] > value]`                                           | Filter rows based on condition                                                                                                  |
 | **Missing Data**         | `df.dropna()`                                                        | Drop rows with missing values                                                                                                   |
 |                          | `df.fillna(value)`                                                   | Fill missing values with a specified value                                                                                      |
@@ -62,6 +63,9 @@
 | **DataFrame Metadata**   | `df.info()`                                                          | Print a concise summary of a DataFrame                                                                                          |
 |                          | `df.dtypes`                                                          | Get the data types of each column                                                                                               |
 |                          | `df.shape`                                                           | Returns a tuple representing the dimensionality (number of rows and columns) of the DataFrame.                                  |
+|                          | `df.dtypes`                                                          | Get the data types of each column.                                                                                              |
+|                          | `df.select_dtypes(include=[types])`                                  | Select columns in a DataFrame based on their data type. Specify types to include using a list like `['number', 'category']`.    |
+|                          | `df.select_dtypes(exclude=[types])`                                  | Exclude columns in a DataFrame based on their data type.                                                                        |
 
 ## Sklearn - Key Functions and Examples
 
