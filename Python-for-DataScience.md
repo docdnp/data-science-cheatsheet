@@ -43,7 +43,6 @@
 |                              | `np.random.permutation(x)`                   | Randomly permute a sequence, or return a permuted range.                                                  |
 | **Random State Control**     | `np.random.seed(seed=42)`                    | Set the seed of the random number generator for numpy to ensure reproducibility of random operations.     |
 
-Dieser Eintrag stellt sicher, dass die Tabelle die Funktion zur Kontrolle des Zufallszustandes umfasst, was besonders wichtig ist, um reproduzierbare Ergebnisse bei der Verwendung von Zufallsfunktionen zu gewährleisten.
 ## Pandas - Key Functions and Examples
 
 Pandas has two basic data structures:
