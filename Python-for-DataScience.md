@@ -116,8 +116,6 @@ Pandas has two basic data structures:
 |                          | `df.select_dtypes(exclude=[types])`                                             | Exclude columns in a DataFrame based on their data type.                                                                                                                                                                                              |
 
 
-
-Diese Ergänzung hilft dabei, die Funktionen für statistische Analysen in Pandas umfassend darzustellen.
 ### Pandas - Series
 
 | Category                | Function or Example                     | Description                                                                                              |
@@ -188,9 +186,7 @@ Diese Ergänzung hilft dabei, die Funktionen für statistische Analysen in Panda
 | **Cluster Map**        | `sns.clustermap(data=matrix)`                              | Organize and plot a heatmap with hierarchical clustering.            |
 | **Joint Plot**         | `sns.jointplot(x='x_col', y='y_col', data=df, kind='hex')` | Plot a bivariate histogram and scatterplot with marginal histograms. |
 
-Hier ist eine Tabelle, die eine Auswahl nützlicher Funktionen der Bibliothek `statsmodels.api` umfasst, geeignet für statistische Modellierung und Analyse. Diese Tabelle kategorisiert die Funktionen nach ihrem Hauptanwendungsbereich.
-
-### Statsmodels - Key Functions and Examples
+### statsmodels.api - Key Functions and Examples
 
 | Category                  | Function or Example                                  | Description                                                                                                          |
 | ------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
