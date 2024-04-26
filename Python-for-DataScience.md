@@ -230,8 +230,6 @@ Hier ist eine Tabelle, die eine Auswahl nützlicher Funktionen der Bibliothek `s
 | **Correlation Coefficients** | `stats.pearsonr(X, Y)`                                                                                                                    | Calculates the Pearson correlation coefficient between two arrays, `X` and `Y`. This measure reflects the linear correlation between variables, ranging from -1 (perfect negative correlation) to 1 (perfect positive correlation). It also returns the p-value for testing non-correlation. This test can help in determining the strength and direction of a linear relationship between two continuous variables.                         |
 |                              | `stats.spearmanr(X, Y)`                                                                                                                   | Calculates the Spearman rank correlation coefficient between two arrays, `X` and `Y`. This non-parametric measure assesses how well the relationship between the variables can be described using a monotonic function. It ranges from -1 (perfect negative monotonic correlation) to 1 (perfect positive monotonic correlation) and includes a p-value for testing non-correlation.                                                         |
 
-Deine Zusammenfassung ist größtenteils gut strukturiert und informativ, aber es gibt einige kleinere Anpassungen, die nötig sind, um die Konzepte von Test-Statistiken und Korrelationskoeffizienten korrekt zu trennen und zu klären. Hier ist eine korrigierte Version deines Textes, die sich speziell auf diese Unterscheidungen konzentriert:
-
 # Theory on Statistical Tests
 
 To examine relationships between variables in a dataset, distinguish three levels of analysis:
