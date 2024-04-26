@@ -230,71 +230,55 @@ Hier ist eine Tabelle, die eine Auswahl nützlicher Funktionen der Bibliothek `s
 | **Correlation Coefficients** | `stats.pearsonr(X, Y)`                                                                                                                    | Calculates the Pearson correlation coefficient between two arrays, `X` and `Y`. This measure reflects the linear correlation between variables, ranging from -1 (perfect negative correlation) to 1 (perfect positive correlation). It also returns the p-value for testing non-correlation. This test can help in determining the strength and direction of a linear relationship between two continuous variables.                         |
 |                              | `stats.spearmanr(X, Y)`                                                                                                                   | Calculates the Spearman rank correlation coefficient between two arrays, `X` and `Y`. This non-parametric measure assesses how well the relationship between the variables can be described using a monotonic function. It ranges from -1 (perfect negative monotonic correlation) to 1 (perfect positive monotonic correlation) and includes a p-value for testing non-correlation.                                                         |
 
-# Theory
+Deine Zusammenfassung ist größtenteils gut strukturiert und informativ, aber es gibt einige kleinere Anpassungen, die nötig sind, um die Konzepte von Test-Statistiken und Korrelationskoeffizienten korrekt zu trennen und zu klären. Hier ist eine korrigierte Version deines Textes, die sich speziell auf diese Unterscheidungen konzentriert:
 
-## Types of variables
+# Theory on Statistical Tests
 
-* **quantitative** or **continuous**
-* **qualitative** or **categorial**
+To examine relationships between variables in a dataset, distinguish three levels of analysis:
+
+* between quantitative (categorial) variables,
+* between qualitative (continuous) variables,
+* between qualitative and quantitative variables.
 
 ## Statistical Tests
 
-### Basic Howto:
+### Basic How-to:
 
-In order to examine relationships between variables in a dataset, three levels of analysis must be distinguished:
+1. **Hypotheses**
+   1. **Type A**
+      - $H_0$: Null Hypothesis: $X$ and $Y$ are not correlated.
+      - $H_1$: Alternative Hypothesis: $X$ and $Y$ are correlated.
+   2. **Type B** (see ANOVA)
+      - $H_0$: No significant effect of the categorical variable on the continuous variable
+      - $H_1$: Significant effect of the categorical variable on the continuous variable
+2. **Choice of the test (for details see table below)**
+   - **Test Types**
+      - **Student's t-test** (t-test)
+        - Checks: **continuous** => **continuous**
+      - **Correlation**
+        - Checks: **continuous** => **continuous**
+      - **ANOVA** (Analysis of Variance)
+        - Checks: **categorical** => **continuous**
+      - **Chi-square ($\chi^2$) independence test**
+        - Checks: **categorical** <=> **categorical**
+3. **Calculation of test statistic and p-value or correlation coefficient**
+    * The typical scenarios would be:
+      - **Low p-value and high test statistic**: Rejection of $H_0$, strong evidence in favor of $H_1$.
+      - **High p-value and low test statistic**: No rejection of $H_0$, insufficient evidence against $H_0$.
+4. **Decision making**
+   - For t-test, ANOVA, Chi-square:
+     - $H_0$ is not rejected if $p \geq \alpha$ (commonly 5%)
+     - $H_1$ is supported if $p < \alpha$
+   - For correlation (Pearson, Spearman):
+     - $H_0$: The variables $X$ and $Y$ are uncorrelated if the correlation coefficient is close to 0
+     - $H_1$: The variables $X$ and $Y$ are correlated if the correlation coefficient is significantly different from 0
 
-* between quantitative variables,
-* between qualitative variables,
-* between qualitative and quantitative variables.
+### Choice of the Test
 
-For each level of analysis, we can ask ourselves this question: is there dependence or independence between the variables?
-
-The objective of this module is to determine whether there is dependence between variables in a data set.
-
-1. Hypotheses
-   1. $H_0$: Null Hypothesis: $X$ and $Y$ are not correlated.
-   2. $H_1$: Alternative Hypothesis: $X$ and $Y$ are correlated.
-2. Choice of the test
-   1. Test Types
-      1. Student test: t-test
-         * Checks: **continuous** => **continuous**
-         * Returns: **p-value** (correlation probability)
-         * How? => `stats.ttest_1samp`
-      3. correlation
-         * Checks: **continuous** => **continuous**
-         * Returns:  
-           * **p-value** (correlation probability)
-           * **coefficient** (allows to see the intensity of the correlation)
-         * How?
-           * Linear relationship: `stats.pearsonr(X, Y)`
-           * Non-Linear relationship: `stats.spearmanr(X, Y)`
-      2. ANOVA
-         * Checks: **categorical** => **continuous**
-           * $\begin{array}{ll}
-              H_0 : \text{No significant effect of the categorical variable on the continuous variable}\\
-              H_1 : \text{Significant effect of the categorical variable on the continuous variable}
-             \end{array}$
-         * Returns: **p-value** (correlation probability)
-         * How? Two steps:
-           1. `result = sm.formula.api.ols('<quant var name> ~ <qual var name>', data=df).fit()`
-           2. `table = sm.api.stats.anova_lm(result)`
-      4. $chi^2$ (Chi-Square) independence test 
-         * Checks: **categorical** <=> **categorial**
-         * Returns:  
-           * **p-value** (correlation probability)
-           * **coefficient** (allows to see the intensity of the correlation)
-         * How? Two steps:
-            1. `ct = pd.crosstab(df["chest_pain"], df["sex"])`
-            2. `teststat, p, _, _ = chi2_contingency(ct)`
-3. Calculation of test statistic and p-value or correlation
-4. Decision making
-   1. t-test, ANOVA, $chi^2$
-      * $\begin{array}{ll}
-            H_0 : \text{X and Y are uncorrelated} \iff p \geq  \alpha \text{ (which is often 5\%)} \\
-            H_1 : \text{X and Y are correlated}  \iff p < \alpha
-        \end{array}$
-   2. correlation: Pearson, Spearman
-      * $\begin{array}{ll}
-            H_0 : \text{The variables X and Y are uncorrelated} \iff corr(X,Y) =  0 \\
-            H_1 : \text{The variables X and Y are correlated}  \iff corr(X,Y) \neq  0
-        \end{array}$
+| Test Type            | Checks                      | Outputs                                                                   | How to Perform                                                                                                                                                                                               | Hypotheses Type |
+| -------------------- | --------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
+| **Student's t-test** | Continuous => Continuous    | T-value (Test Statistic) <br> p-value (Probability under $H_0$)           | `stats.ttest_1samp` <br> (Example: Comparing sample mean against a known value)                                                                                                                              | A               |
+| **Correlation**      | Continuous => Continuous    | Correlation coefficient                                                   | Linear: `stats.pearsonr(X, Y)` <br> (Example: Testing relationship between height and weight)                                                                                                                | A               |
+|                      |                             |                                                                           | Non-Linear: `stats.spearmanr(X, Y)` <br> (Example: Assessing the relationship between customer satisfaction ratings and the number of complaints filed)                                                      | A               |
+| **ANOVA**            | Categorical => Continuous   | F-value (Test Statistic) <br> p-value (Probability under $H_0$)           | 1. Fit model: `sm.formula.api.ols('Y ~ C(X)', data=df).fit()` <br> 2. ANOVA: `sm.api.stats.anova_lm(result)` <br> (Example: Impact of diet on weight)                                                        | B               |
+| **Chi-square Test**  | Categorical <=> Categorical | Chi-squared value (Test Statistic) <br> p-value (Probability under $H_0$) | 1. Create table: `ct = pd.crosstab(df["chest_pain"], df["sex"])` <br> 2. Perform test: `teststat, p, _, _ = chi2_contingency(ct)` <br> (Example: Checking independence between gender and choice of product) | A               |
