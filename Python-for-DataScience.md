@@ -131,6 +131,8 @@ Pandas has two basic data structures:
 |                         | `series.median()`                       | Computes the median of the Series.                                                                       |
 |                         | `series.mode()`                         | Computes the mode of the Series.                                                                         |
 |                         | `series.quantile([0.25, 0.5, 0.75, 1])` | Computes quantiles for the Series data.                                                                  |
+|                         | `series.idxmax()`                       | Returns the index of the first occurrence of the maximum value in the Series.                            |
+|                         | `series.idxmin()`                       | Returns the index of the first occurrence of the minimum value in the Series.                            |
 
 ## Sklearn - Key Functions and Examples
 
