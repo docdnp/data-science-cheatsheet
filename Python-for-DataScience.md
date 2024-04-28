@@ -278,3 +278,37 @@ To examine relationships between variables in a dataset, distinguish three level
 |                      |                             |                                                                           | Non-Linear: `stats.spearmanr(X, Y)` <br> (Example: Assessing the relationship between customer satisfaction ratings and the number of complaints filed)                                                      | A               |
 | **ANOVA**            | Categorical => Continuous   | F-value (Test Statistic) <br> p-value (Probability under $H_0$)           | 1. Fit model: `sm.formula.ols('Y ~ C(X)', data=df).fit()` <br> 2. ANOVA: `sm.stats.anova_lm(result)` <br> (Example: Impact of diet on weight)                                                                | B               |
 | **Chi-square Test**  | Categorical <=> Categorical | Chi-squared value (Test Statistic) <br> p-value (Probability under $H_0$) | 1. Create table: `ct = pd.crosstab(df["chest_pain"], df["sex"])` <br> 2. Perform test: `teststat, p, _, _ = chi2_contingency(ct)` <br> (Example: Checking independence between gender and choice of product) | A               |
+
+# Theory on Data Quality
+
+### Why is Data Quality important?
+
+Shit in, shit out.
+
+### Six principles of Data Quality
+
+To consider good data quality, ensure
+
+* **Consistency**
+* **Validity**
+* **Completeness**
+* **The precision**
+* **Availability**
+* **News**
+
+### Data Quality strategy within companys
+
+Three main pillars:
+
+- **Data governance**
+  - Monitor data quality itself
+  - Monitor procedures of data quality maintainance
+  - Responsibility for financial tradeoffs between shit in and shit out
+  - Responsibility of company wide awareness regarding data quality
+- **Data Quality Assurance (QA)**: Ensure six principles of data quality.
+- **Quality control**: 
+  - Implement downstream assurance methods 
+  - Implement quality control protocols ensuring the six principles
+
+
+
