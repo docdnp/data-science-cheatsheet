@@ -115,24 +115,27 @@ Pandas has two basic data structures:
 |                          | `df.select_dtypes(include=[types])`                                             | Select columns in a DataFrame based on their data type. Specify types to include using a list like `['number', 'category']`.                                                                                                                          |
 |                          | `df.select_dtypes(exclude=[types])`                                             | Exclude columns in a DataFrame based on their data type.                                                                                                                                                                                              |
 
-
 ### Pandas - Series
 
-| Category                | Function or Example                     | Description                                                                                              |
-| ----------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| **Series Attributes**   | `series.values`                         | Returns the data of the Series as an array.                                                              |
-|                         | `series.index`                          | Returns the index (labels) of the Series.                                                                |
-|                         | `series.dtype`                          | Returns the data type of the Series.                                                                     |
-| **Series Manipulation** | `series.sort_values()`                  | Sorts the Series in ascending or descending order.                                                       |
-|                         | `series.drop_duplicates()`              | Returns a Series with duplicate values removed.                                                          |
-|                         | `series.reset_index(drop=True)`         | Resets the index of the Series, making it a simple range index, and optionally drops the previous index. |
-| **Series Analysis**     | `series.describe()`                     | Provides a summary of statistics pertaining to the Series data.                                          |
-|                         | `series.mean()`                         | Computes the mean of the Series.                                                                         |
-|                         | `series.median()`                       | Computes the median of the Series.                                                                       |
-|                         | `series.mode()`                         | Computes the mode of the Series.                                                                         |
-|                         | `series.quantile([0.25, 0.5, 0.75, 1])` | Computes quantiles for the Series data.                                                                  |
-|                         | `series.idxmax()`                       | Returns the index of the first occurrence of the maximum value in the Series.                            |
-|                         | `series.idxmin()`                       | Returns the index of the first occurrence of the minimum value in the Series.                            |
+| Category                | Function or Example                        | Description                                                                                                                      |
+| ----------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Series Attributes**   | `series.values`                            | Returns the data of the Series as an array.                                                                                      |
+|                         | `series.index`                             | Returns the index (labels) of the Series.                                                                                        |
+|                         | `series.dtype`                             | Returns the data type of the Series.                                                                                             |
+| **Series Manipulation** | `series.sort_values()`                     | Sorts the Series in ascending or descending order.                                                                               |
+|                         | `series.drop_duplicates()`                 | Returns a Series with duplicate values removed.                                                                                  |
+|                         | `series.reset_index(drop=True)`            | Resets the index of the Series, making it a simple range index, and optionally drops the previous index.                         |
+| **Series Analysis**     | `series.describe()`                        | Provides a summary of statistics pertaining to the Series data.                                                                  |
+|                         | `series.mean()`                            | Computes the mean of the Series.                                                                                                 |
+|                         | `series.median()`                          | Computes the median of the Series.                                                                                               |
+|                         | `series.mode()`                            | Computes the mode of the Series.                                                                                                 |
+|                         | `series.quantile([0.25, 0.5, 0.75, 1])`    | Computes quantiles for the Series data.                                                                                          |
+|                         | `series.idxmax()`                          | Returns the index of the first occurrence of the maximum value in the Series.                                                    |
+|                         | `series.idxmin()`                          | Returns the index of the first occurrence of the minimum value in the Series.                                                    |
+| **String Operations**   | `series.str.contains(pattern, regex=True)` | Checks if each element of the Series contains a pattern/regex. If `regex=True`, the pattern is treated as a regex.               |
+|                         | `series.str.replace(old, new, regex=True)` | Replaces occurrences of a pattern with a new string in each element of the Series. If `regex=True`, `old` is treated as a regex. |
+|                         | `series.str.upper()`                       | Converts all characters in each string of the Series to uppercase.                                                               |
+|                         | `series.str.lower()`                       | Converts all characters in each string of the Series to lowercase.                                                               |
 
 ## Sklearn - Key Functions and Examples
 
