@@ -12,9 +12,20 @@ I am currently doing a data science course. That's why I'm creating a series of 
     * Datframes
     * Series
   * sklearn
+  * seaborn
   * statsmodels.api
+  * scipy.stats
+* Theory on Statistical Tests
+* Theory on Data Quality
 
 ## How to create an HTML or PDF file
+
+> **Caution**
+>
+> I havn't found a simple way to create HTML where the latex formulas are converted correctly. By simple I mean using a script.
+> 
+> For good result I recommend to use the VS Code plugin "Markdown All in One".
+> Feel free to contribute a better solution for a solution on a scripting basis.
 
 ### Preconditions
 
